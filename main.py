@@ -15,12 +15,12 @@ report = f'{scorer_0} scored in the {goal_0}nd minute\n{scorer_1} scored in the 
 
 player = 'Arnold Mühren'
 
-first_name = player[0:6]
+first_name = player[:player.find(' ')]
 first_name_len = len(first_name)
-last_name = player[7:14]
+last_name = player[first_name_len + 1:]
 last_name_len = len(last_name)
 
-name_short = f'{player[0]}. {player[7:14]}'
+name_short = f'{first_name[0]}. {last_name}'
 
 chant = ((first_name + '! ') * first_name_len).strip()
 good_chant = chant != ' '
